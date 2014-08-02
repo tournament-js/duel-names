@@ -1,0 +1,29 @@
+{
+  "name": "duel-names",
+  "description": "Duel round names mixin for Duel tournaments",
+  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "clux/duel-names"
+  },
+  "keywords": [],
+  "main": "duel_names.js",
+  "scripts": {
+    "test": "nodeunit --reporter=verbose test/*.js",
+    "coverage": "jscoverage duel_names.js && DUEL_NAMES_COV=1 nodeunit --reporter=lcov test/*.js",
+    "coveralls": "npm run coverage | coveralls"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "duel": "^0.5.1",
+    "coveralls": "^2.11.1",
+    "interlude": "^1.0.3",
+    "jscoverage": "^0.5.5",
+    "nodeunit": "^0.9.0"
+  },
+  "bugs": {
+    "url": "http://github.com/clux/duel-names/issues"
+  },
+  "license": "MIT"
+}
