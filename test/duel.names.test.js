@@ -1,6 +1,6 @@
 var $ = require('interlude')
   , Duel = require('duel')
-  , duelNames = require('../duel_names.js');
+  , duelNames = require(process.env.DUEL_NAMES_COV ? '../duel_names-cov.js' : '../');
 
 Duel.attachNames(duelNames);
 
