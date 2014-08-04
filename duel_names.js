@@ -1,67 +1,21 @@
-/**
- * roundNames UI helper function for Duel tournaments - localized to English
- *
- * Full localization, require more work than simply swapping strings:
- * In particular, rounds like 'Round of 8/16' is called '8ths/16ths Finals' in other
- * countries, whereas we just hard coded them as string + Math.pow(2, x).
- *
- * Fork this module and attach it to `Duel`.
- */
-
-var appendRoundNum = function (str) {
-  return function (num) {
-    return str + " of " + num;
-  };
-};
-var constant = function (str) {
-  return function () {
-    return str;
-  };
-};
-
-var seNames = [
-  // bronze final is a special case and must be the first entry
-  constant("Bronze final"), // bronze final match may be part of the 'finals' round
-  // remaining entries are rounds in descending order of importance
-  constant("Grand final"),  // often called just the 'Final'
-  constant("Semi-finals"),
-  constant("Quarter-finals"),
-  appendRoundNum("Round")
-];
-
-// when in double elimination we use these 2
-var wbNames = [
-  constant("WB Final"),
-  constant("WB Semi-finals"),
-  constant("WB Quarter-finals"),
-  appendRoundNum("WB Round")
-];
-var lbNames = [
-  constant("Grand final"),          // Strong grand final (no prefix lest we spoil)
-  constant("Grand final"),          // Potentially last game
-  constant("LB Strong final"),      // 3rd place decider
-  constant("LB Final"),             // 4th place decider
-  appendRoundNum("LB Round"),       // first time there's X in LB
-  appendRoundNum("LB Strong Round") // last time there's X in LB
-];
-
+var names = require('./english');
 
 var roundNameSingle = function (T, last, p, br, r) {
   if (br === T.LB) {
-    return seNames[0]();
+    return names.single[0]();
   }
-  return seNames[(r + 3 > p) ? p - r + 1 : 4](Math.pow(2, p - r + 1));
+  return names.single[(r + 3 > p) ? p - r + 1 : 4](Math.pow(2, p - r + 1));
 };
 
 var roundNameDouble = function (T, last, p, br, r) {
   if (br === T.WB) {
-    return wbNames[(r + 3 > p) ? p - r : 3](Math.pow(2, p - r + 1));
+    return names.doubleWinners[(r + 3 > p) ? p - r : 3](Math.pow(2, p - r + 1));
   }
   // gf rounds or lb final first, else treat like (strong?) round of X (idx 4 or 5)
   var lbIdx = (r >= 2*p - 3) ? 2*p - r : (5 - r%2);
 
   // round number 2n always has same number as 2n-1 because of feeding
-  return lbNames[lbIdx](Math.pow(2, p -  Math.floor((r+1)/2)));
+  return names.doubleLosers[lbIdx](Math.pow(2, p -  Math.floor((r+1)/2)));
 };
 
 
