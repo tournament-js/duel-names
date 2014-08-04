@@ -2,7 +2,7 @@ var $ = require('interlude')
   , Duel = require('duel')
   , duelNames = require(process.env.DUEL_NAMES_COV ? '../duel_names-cov.js' : '../');
 
-Duel.attachNames(duelNames);
+Duel.attachNames(duelNames(require('../english.js')));
 
 exports.single = function (t) {
   var d = new Duel(32, { last: Duel.WB }) // using bronze final

@@ -11,15 +11,14 @@ var constant = function (str) {
 
 exports.single = [
   // bronze final is a special case and must be the first entry
-  constant("Bronze final"), // bronze final match may be part of the 'finals' round
+  constant("Bronze final"),
   // remaining entries are rounds in descending order of importance
-  constant("Grand final"),  // often called just the 'Final'
+  constant("Grand final"),
   constant("Semi-finals"),
   constant("Quarter-finals"),
   appendRoundNum("Round")
 ];
 
-// when in double elimination we use these 2
 exports.doubleWinners = [
   constant("WB Final"),
   constant("WB Semi-finals"),
