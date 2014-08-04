@@ -8,7 +8,7 @@ var specials = {
 };
 
 var ordinals = function (num) {
-  return (num in specials) ? specials[num] : num + '-';
+  return (num in specials) ? specials[num] : num + '-dels';
 };
 
 var prependLosersThenOrdinal = function (losers, str) {
