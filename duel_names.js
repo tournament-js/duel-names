@@ -12,7 +12,7 @@ var roundNameDouble = function (T, last, p, br, r) {
     return names.doubleWinners[(r + 3 > p) ? p - r : 3](Math.pow(2, p - r + 1));
   }
   // gf rounds or lb final first, else treat like (strong?) round of X (idx 4 or 5)
-  var lbIdx = (r >= 2*p - 3) ? 2*p - r : (5 - r%2);
+  var lbIdx = (r >= 2*p - 3) ? 2*p - r : (4 + r%2);
 
   // round number 2n always has same number as 2n-1 because of feeding
   return names.doubleLosers[lbIdx](Math.pow(2, p -  Math.floor((r+1)/2)));

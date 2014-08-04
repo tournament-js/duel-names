@@ -32,6 +32,6 @@ exports.doubleLosers = [
   constant("Grand final"),          // Potentially last game
   constant("LB Strong final"),      // 3rd place decider
   constant("LB Final"),             // 4th place decider
-  appendRoundNum("LB Round"),       // first time there's X in LB
-  appendRoundNum("LB Strong Round") // last time there's X in LB
+  appendRoundNum("LB Strong Round"),// last time there's X in LB
+  appendRoundNum("LB Round")        // first time there's X in LB
 ];
