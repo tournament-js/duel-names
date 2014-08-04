@@ -1,3 +1,7 @@
+1.1.1 / 2014-08-04
+==================
+  * Fix bug in norwegian language file for large tournaments
+
 1.1.0 / 2014-08-04
 ==================
   * Changed structure so users can inject their own language file.=
