@@ -12,10 +12,10 @@ Mixin with the Duel class:
 
 ```js
 var Duel = require('duel');
-Duel.attachNames(require('duel-names'));
+var duelNames = require('duel-names');
+Duel.attachNames(duelNames(require('duel-names/english')));
 
-
-var d = new Duel(4, WB);
+var d = new Duel(4, { last: Duel.WB });
 d.roundName(d.matches[3].id);
 'Bronze Final';
 d.roundName(d.matches[2].id);
@@ -25,7 +25,7 @@ d.roundName(d.matches[2].id);
 You can pass in a full match id, or a partial Id. The `id` must minimally contain `{ s: bracket, r: round }`.
 
 ## Localizing
-Fork, make it work with your language, publish as `duel-names-LANGUAGE`. Submit issues/prs to this if insufficiently general. Something like that.
+Add a language file, consider submitting it to this repo (but with tests please), or just maintain the language file yourself.
 
 ## License
 MIT-Licensed. See LICENSE file for details.
