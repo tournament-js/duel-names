@@ -3,7 +3,6 @@
 [![build status](https://secure.travis-ci.org/clux/duel-names.svg)](http://travis-ci.org/clux/duel-names)
 [![dependency status](https://david-dm.org/clux/duel-names.svg)](https://david-dm.org/clux/duel-names)
 [![coverage status](http://img.shields.io/coveralls/clux/duel-names.svg)](https://coveralls.io/r/clux/duel-names)
-[![experimental](http://img.shields.io/badge/stability-experimental-DD5F0A.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
 
 A mixin module for [Duel](https://www.npmjs.org/package/duel) that puts `roundName` function on the `Duel` class prototype that outputs the normal english names for duel rounds. This is here, rather than inside the duel repository for easy internationalization.
 

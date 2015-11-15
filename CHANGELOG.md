@@ -1,3 +1,7 @@
+1.1.2 / 2015-11-16
+==================
+  * Add `.npmignore`
+
 1.1.1 / 2014-08-04
 ==================
   * Fix bug in norwegian language file for large tournaments
