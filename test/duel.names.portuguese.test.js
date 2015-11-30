@@ -21,7 +21,7 @@ exports.single = function (t) {
     else {
       var wbRoundNames = {
         1: "Rodada de 32",
-        2: "Rodada de 16",
+        2: "Oitavas de final",
         3: "Quartas de final",
         4: "Semifinal",
         5: "Grande final"
@@ -59,7 +59,7 @@ exports.double = function (t) {
   var checkWb = function (r, name) {
     var wbRoundNames = {
       1: "Vencedores Rodada de 32",
-      2: "Vencedores Rodada de 16",
+      2: "Vencedores Oitavas de final",
       3: "Vencedores Quartas de final",
       4: "Vencedores Semifinal",
       5: "Vencedores Final"
