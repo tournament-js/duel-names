@@ -10,15 +10,16 @@
   "keywords": [],
   "main": "duel_names.js",
   "scripts": {
-    "test": "nodeunit --reporter=verbose test/*.js",
-    "coverage": "jscoverage duel_names.js && DUEL_NAMES_COV=1 nodeunit --reporter=lcov test/*.js"
+    "test": "bndg test/*.js",
+    "precoverage": "istanbul cover bndg test/*.js",
+    "coverage": "cat coverage/lcov.info && rm -rf coverage"
   },
   "dependencies": {},
   "devDependencies": {
+    "bandage": "^0.3.2",
     "duel": "^0.5.1",
     "interlude": "^1.0.3",
-    "jscoverage": "^0.5.5",
-    "nodeunit": "^0.9.0"
+    "istanbul": "^0.4.1"
   },
   "bugs": {
     "url": "http://github.com/clux/duel-names/issues"
