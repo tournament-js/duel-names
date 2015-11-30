@@ -3,14 +3,14 @@ module.exports = function (names) {
     if (br === T.LB) {
       return names.single[0]();
     }
-    var sl = names.single.length;
-    return names.single[(r + (sl - 1) > p) ? p - r + 1 : sl - 1](Math.pow(2, p - r + 1));
+    var last = names.single.length - 1;
+    return names.single[(r + last > p) ? p - r + 1 : last](Math.pow(2, p - r + 1));
   };
 
   var roundNameDouble = function (T, p, br, r) {
-    var dwl = names.doubleWinners.length;
     if (br === T.WB) {
-      return names.doubleWinners[(r + (dwl - 1) > p) ? p - r : dwl - 1](Math.pow(2, p - r + 1));
+      var last = names.doubleWinners.length - 1;
+      return names.doubleWinners[(r + last > p) ? p - r : last](Math.pow(2, p - r + 1));
     }
     // gf rounds or lb final first, else treat like (strong?) round of X (idx 4 or 5)
     var lbIdx = (r >= 2*p - 3) ? 2*p - r : (4 + r%2);
