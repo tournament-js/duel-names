@@ -2,7 +2,7 @@
   "name": "duel-names",
   "description": "Duel round names mixin for Duel tournaments",
   "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "clux/duel-names"
