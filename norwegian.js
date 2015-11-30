@@ -4,11 +4,12 @@ var specials = {
   '16': 'Åttendels',
   '32': 'Sekstendels',
   '64': 'Trettitodels',
-  '128': 'Sekstifiredels'
+  '128': 'Sekstifiredels',
+  '256': 'Hundreogtjueåttedels'
 };
 
 var ordinals = function (num) {
-  return (num in specials) ? specials[num] : num + '-dels';
+  return (num in specials) ? specials[num] : num/2 + '-dels';
 };
 
 var prependLosersThenOrdinal = function (losers, str) {
@@ -29,25 +30,21 @@ var constant = function (str) {
 };
 
 exports.single = [
-  constant("Bronsefinale"),
-  constant("Finale"),
-  constant("Semifinaler"),
-  constant("Kvartfinaler"),
-  prependOrdinal("finaler")
+  constant('Bronsefinale'),
+  constant('Finale'),
+  prependOrdinal('finaler')
 ];
 
 exports.doubleWinners = [
-  constant("Finale"),
-  constant("Semifinaler"),
-  constant("Kvartfinaler"),
-  prependOrdinal("finaler")
+  constant('Finale'),
+  prependOrdinal('finaler')
 ];
 
 exports.doubleLosers = [
-  constant("Storfinale"),
-  constant("Storfinale"),
-  constant("Tapernes storfinale"),
-  constant("Tapernes finale"),
-  prependLosersThenOrdinal("Tapernes siste ", "finaler"),
-  prependLosersThenOrdinal("Tapernes ", "finaler")
+  constant('Storfinale'),
+  constant('Storfinale'),
+  constant('Tapernes storfinale'),
+  constant('Tapernes finale'),
+  prependLosersThenOrdinal('Tapernes siste ', 'finaler'),
+  prependLosersThenOrdinal('Tapernes ', 'finaler')
 ];
