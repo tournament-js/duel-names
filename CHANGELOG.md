@@ -1,3 +1,8 @@
+1.2.0 / 2015-11-30
+==================
+  * Added portugese and spanish tranlations - via @alexweber
+  * Allow arbitrary length `single` and `doubleWinners` arrays for language compat - via @alexweber
+
 1.1.2 / 2015-11-16
 ==================
   * Add `.npmignore`
