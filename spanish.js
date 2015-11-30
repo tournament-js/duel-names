@@ -16,6 +16,7 @@ exports.single = [
   constant("Gran final"),
   constant("Semifinal"),
   constant("Cuartos de final"),
+  constant("Octavos de final"),
   appendRoundNum("Ronda")
 ];
 
@@ -23,6 +24,7 @@ exports.doubleWinners = [
   constant("Ganadores Final"),
   constant("Ganadores Semifinal"),
   constant("Ganadores Cuartos de final"),
+  constant("Ganadores Octavos de final"),
   appendRoundNum("Ganadores Ronda")
 ];
 
