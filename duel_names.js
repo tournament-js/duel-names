@@ -28,15 +28,15 @@ module.exports = function (names) {
 
     // sanity
     if (!Number.isFinite(r) || r < 1 || [T.WB, T.LB].indexOf(br) < 0) {
-      throw new Error("invalid partial id for roundName: " + partialId);
+      throw new Error('invalid partial id for roundName: ' + partialId);
     }
     var invWB = (br === T.WB && r > p)
       , invSeLB = (last === T.WB && br >= T.LB && r !== 1)
       , invDeLB = (last === T.LB && r > 2*p);
 
     if (invWB || invSeLB || invDeLB) {
-      var str = "br=" + br + ", last=" + last;
-      throw new Error("invalid round " + r + " given for elimination: " + str);
+      var str = 'br=' + br + ', last=' + last;
+      throw new Error('invalid round ' + r + ' given for elimination: ' + str);
     }
 
     return (last === T.WB ? roundNameSingle : roundNameDouble)(T, p, br, r);
